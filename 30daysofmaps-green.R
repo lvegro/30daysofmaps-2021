@@ -22,11 +22,14 @@ q2h <- e %>%
   opq (timeout = 25*100) %>%
   add_osm_feature("shop", "second_hand")
 
-#charity <- osmdata_sf(qc)
+charity <- osmdata_sf(qc)
 secondhand <- osmdata_sf(q2h)
+
 #our background map
-map <- get_map(e, source="stamen", 
-               force = TRUE,zoom = 5, color="bw")
+#commented, unused (can't figure out how to make the CRS line up)
+
+#map <- get_map(e, source="stamen", 
+#               force = TRUE,zoom = 5, color="bw")
 
 ggplot(charity$osm_points)+
   geom_sf(colour = "#238443",
